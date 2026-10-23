@@ -22,6 +22,5 @@ for col in yt_df.select_dtypes(include=['number']).columns:
     yt_df[col] = yt_df[col].clip(lower=lower_bound, upper=upper_bound)
 
 yt_df["description"] = yt_df["description"].fillna("None")
-cts = yt_df.loc[yt_df["description"].isna()]
-print(cts)
+
 
