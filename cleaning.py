@@ -15,5 +15,6 @@ df['tags'] = df['tags'].replace('[none]',np.nan)
 df['has_tags'] = df['description'].notna()
 df['trending_date'] = pd.to_datetime(df['trending_date'], format="%y,%d,%m")
 df['publish_time'] = pd.to_datetime(df['publish_time'], utc = True)
-
+df.loc[df['ratings_disabled'], ['likes', 'dislikes']] = np.nan
+df.loc[df['comments_disabled'], 'comment_count'] = np.nan
 
